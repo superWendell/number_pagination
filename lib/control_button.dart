@@ -29,7 +29,6 @@ class ControlButton extends StatelessWidget {
         ),
         surfaceTintColor: Colors.transparent,
         padding: EdgeInsets.zero,
-        minimumSize: Size(48, 48),
         foregroundColor: enabled ? colorPrimary : Colors.grey,
         backgroundColor: colorSub,
         disabledForegroundColor: colorPrimary,
