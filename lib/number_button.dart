@@ -36,7 +36,6 @@ class NumberButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(buttonRadius),
           ),
           padding: EdgeInsets.zero,
-          minimumSize: Size(48, 48),
           foregroundColor:
           number == NumberPageContainer.of(context).currentPage
               ? colorSub
