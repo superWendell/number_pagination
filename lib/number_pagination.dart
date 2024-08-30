@@ -134,17 +134,20 @@ class NumberPagination extends StatelessWidget {
 
                   return Row(mainAxisSize: MainAxisSize.min, children: [
                     for (var i = rangeStart; i < rangeEnd; i++)
-                      NumberButton(
-                        i + 1,
-                        buttonElevation,
-                        buttonRadius,
-                        colorPrimary,
-                        colorSub,
-                        fontSize,
-                        fontFamily ?? '',
-                        (c, number) {
-                          _changePage(c, number);
-                        },
+                      Container(
+                        margin: EdgeInsets.only(right: (i+1)<rangeEnd ? buttonSpacing : 0),
+                        child: NumberButton(
+                          i + 1,
+                          buttonElevation,
+                          buttonRadius,
+                          colorPrimary,
+                          colorSub,
+                          fontSize,
+                          fontFamily ?? '',
+                              (c, number) {
+                            _changePage(c, number);
+                          },
+                        ),
                       )
                   ]);
                 },
