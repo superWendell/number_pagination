@@ -25,41 +25,38 @@ class NumberButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Flexible(
-      child: Padding(
-        padding: const EdgeInsets.all(1.5),
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            shadowColor: number == NumberPageContainer.of(context).currentPage
-                ? colorPrimary
-                : null,
-            elevation: buttonElevation,
-            surfaceTintColor: Colors.transparent,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(buttonRadius),
-            ),
-            padding: EdgeInsets.zero,
-            minimumSize: Size(48, 48),
-            foregroundColor:
-                number == NumberPageContainer.of(context).currentPage
-                    ? colorSub
-                    : colorPrimary,
-            backgroundColor:
-                number == NumberPageContainer.of(context).currentPage
-                    ? colorPrimary
-                    : colorSub,
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          shadowColor: number == NumberPageContainer.of(context).currentPage
+              ? colorPrimary
+              : null,
+          elevation: buttonElevation,
+          surfaceTintColor: Colors.transparent,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(buttonRadius),
           ),
-          onPressed: () {
-            onSelect(context, number);
-          },
-          child: Text(
-            '${number}',
-            style: TextStyle(
-              fontSize: fontSize,
-              fontFamily: fontFamily,
-              color: number == NumberPageContainer.of(context).currentPage
-                  ? colorSub
-                  : colorPrimary,
-            ),
+          padding: EdgeInsets.zero,
+          minimumSize: Size(48, 48),
+          foregroundColor:
+          number == NumberPageContainer.of(context).currentPage
+              ? colorSub
+              : colorPrimary,
+          backgroundColor:
+          number == NumberPageContainer.of(context).currentPage
+              ? colorPrimary
+              : colorSub,
+        ),
+        onPressed: () {
+          onSelect(context, number);
+        },
+        child: Text(
+          '${number}',
+          style: TextStyle(
+            fontSize: fontSize,
+            fontFamily: fontFamily,
+            color: number == NumberPageContainer.of(context).currentPage
+                ? colorSub
+                : colorPrimary,
           ),
         ),
       ),
